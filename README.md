@@ -38,4 +38,4 @@ A simple and responsive web application to manage personal projects. Users can a
 ## Author
 
 Stanisław Bokszczanin  
-[LinkedIn]([https://linkedin.com/in/TwojProfil](https://www.linkedin.com/in/stanisław-bokszczanin-879370360/))
+![LinkedIn]([https://linkedin.com/in/TwojProfil](https://www.linkedin.com/in/stanisław-bokszczanin-879370360/))
