@@ -20,7 +20,7 @@ A simple and responsive web application to manage personal projects. Users can a
 
 ## Screenshots
 
-![Main view]()  
+![Main view](./Planer.png)  
 
 ## How to run
 
