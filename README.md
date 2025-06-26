@@ -20,11 +20,7 @@ A simple and responsive web application to manage personal projects. Users can a
 
 ## Screenshots
 
-![Main view](./screenshots/main-view.png)  
-*Adding a new project*
-
-![Project list](./screenshots/project-list.png)  
-*List of projects with edit/delete options*
+![Main view]()  
 
 ## How to run
 
@@ -42,4 +38,4 @@ A simple and responsive web application to manage personal projects. Users can a
 ## Author
 
 Stanisław Bokszczanin  
-[GitHub](https://github.com/TwojGitHub) | [LinkedIn](https://linkedin.com/in/TwojProfil)
+[LinkedIn]([https://linkedin.com/in/TwojProfil](https://www.linkedin.com/in/stanisław-bokszczanin-879370360/))
