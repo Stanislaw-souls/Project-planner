@@ -1,0 +1,135 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1e1e2f;
+  color: #e0e0e0;
+  padding: 20px;
+}
+
+h1 {
+  color: #f44336; /* trochę czerwieni */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  background: #2c2c44;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto 30px;
+  box-shadow: 0 0 10px rgba(244, 67, 54, 0.3);
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 12px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input, select {
+  background: #3b3b5c;
+  color: #fff;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #f44336;
+  background: #4a4a75;
+}
+
+button {
+  background: #f44336;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #d32f2f;
+}
+
+/* Lista projektów */
+#project-list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.project-item {
+  background: #2c2c44;
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(244, 67, 54, 0.2);
+}
+
+.project-item strong {
+  font-size: 1.1em;
+  flex: 1;
+}
+
+.project-item button {
+  margin-left: 10px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.project-item button.edit {
+  background: #4caf50;
+}
+
+.project-item button.edit:hover {
+  background: #388e3c;
+}
+
+.project-item button.delete {
+  background: #f44336;
+}
+
+.project-item button.delete:hover {
+  background: #d32f2f;
+}
+section h2 {
+  color: #f44336;       /* ten sam czerwony odcień */
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#report-list .project-item {
+  background: #2c2c44;
+  margin-top: 10px;
+  padding: 10px;
+  border-left: 5px solid #f44336;
+}
+#report-list .project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#report-list .delete-report {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+#report-list .delete-report:hover {
+  background: #d32f2f;
+}

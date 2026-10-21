@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Planer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🗓️ Planer projektów i raportów</h1>
+
+  <section id="add-project">
+    <h2><!--➕ Dodaj nowy projekt--></h2>
+    <form id="project-form">
+  <label>
+    Nazwa projektu:
+    <input type="text" id="project-name" required>
+  </label><br>
+
+  <label>
+    Kategoria:
+    <select id="project-category">
+      <option>Programowanie</option>
+      <option>Gra</option>
+      <option>AI</option>
+      <option>Inne</option>
+    </select>
+  </label><br>
+
+  <label>
+    Status:
+    <select id="project-status">
+      <option>Nie zaczęty</option>
+      <option>W trakcie</option>
+      <option>Zakończony</option>
+    </select>
+  </label><br>
+
+  <label>
+    Poziom trudności:
+    <select id="project-level">
+      <option>A – Bardzo łatwy</option>
+      <option>B – Łatwy</option>
+      <option>C – Średni</option>
+      <option>D – Trudny</option>
+      <option>E – Bardzo trudny</option>
+      <option>F – Eksperymentalny</option>
+      <option>G – Duży projekt</option>
+    </select>
+  </label><br>
+
+  <button type="submit">Dodaj projekt</button>
+</form>
+
+  </section>
+
+  <section id="project-list">
+    <h2>📋 Lista projektów</h2>
+    <!-- tutaj będą projekty -->
+  </section>
+
+  <section id="weekly-report">
+    <h2><!--🕒 Cotygodniowy raport--></h2>
+    <form id="report-form">
+  <label>
+    Notatka do raportu:
+    <input type="text" id="report-note" required>
+  </label>
+  <button type="submit">📤 Dodaj raport</button>
+</form>
+
+<div id="report-list">
+  <!-- tutaj pojawią się raporty -->
+</div>
+
+  </section>
+
+  <script src="script.js"></script>
+<script>
+  // ==========================
+  // RAPORTY
+  // ==========================
+
+  const reportForm = document.getElementById('report-form');
+  const reportNoteInput = document.getElementById('report-note');
+  const reportList = document.getElementById('report-list');
+
+  let reports = JSON.parse(localStorage.getItem('reports')) || [];
+
+  function displayReports() {
+    reportList.innerHTML = '';
+    reports.forEach((report) => {
+      const div = document.createElement('div');
+      div.className = 'project-item';
+      div.innerHTML = `
+        <div>
+          <strong>📅 ${report.date}</strong><br>
+          📝 ${report.note}
+        </div>
+        <button class="delete-report">🗑️</button>
+      `;
+
+      reportList.appendChild(div);
+    });
+  }
+
+  reportForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const note = reportNoteInput.value.trim();
+    if (!note) return;
+
+    const report = {
+      date: new Date().toLocaleDateString(),
+      note: note,
+    };
+
+    reports.push(report);
+    localStorage.setItem('reports', JSON.stringify(reports));
+    displayReports();
+    reportForm.reset();
+  });
+
+  displayReports(); // pokaż raporty przy ładowaniu
+  reportList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('delete-report')) {
+    const index = [...reportList.children].indexOf(e.target.parentElement);
+    reports.splice(index, 1);
+    localStorage.setItem('reports', JSON.stringify(reports));
+    displayReports();
+  }
+});
+
+</script>
+
+</body>
+</html>
